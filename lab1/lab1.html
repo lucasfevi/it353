@@ -1,17 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>IT 353 - Lab 1</title>
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="LAB 1 from ITK 353 class.">
+    <meta name="keywords" content="HTML,CSS,JavaScript,ITK,Lab">
+    <meta name="author" content="Lucas Vieira">
+    <title>IT 353 - Lab 1</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
+<body id="lab1">
 
+<div class="container">
+    <h1>LAB 1</h1>
+    <hr>
 
-	<script src="../js/jquery-1.12.0.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+    <h3>About me</h3>
+    <p>My name is Lucas Vieira and I'm a exchange student from Brazil. This is my first time studying abroad, I'm here since August of 2015 and will stay here for 1 year. I used to work as a Backend Developer back in Brazil so I have experience with Web Development and Databases, mostly using <a href="http://cakephp.org/" target="_blank">CakePHP</a>, a PHP framework. Last semester I took IT 275 so I have a few Java experience as well.</p>
+    <p>In the next summer I'm supposed to take an internship before going back to Brazil and I'm looking for a internship in the Web Development area, so I'm looking forward to take this class.</p>
+    <p>Here is a picture of me in Miami on the last winter break:</p>
+
+    <img src="../images/me.jpg" alt="Me" style="width: 200px;" class="img-thumbnail">
+
+    <h3>Javascript</h3>
+    <p><a href="javascript:;" onclick="hello()">Click here</a> to see something fun.</p>
+    <p>And below you can see the <b>code</b> I use to do it:</p>
+
+    <pre>
+var firstName = prompt("Please enter your first name", "Harry");
+var lastName = prompt("Please enter your last name", "Potter");
+
+alert("Hello " + lastName + ", " + firstName + "! Welcome to ITK353.");</pre>
+
+    <h3>Contact</h3>
+    <p>You can contact me anytime by sending and e-mail to <a href="mailto:ldacruz@ilstu.edu">ldacruz@ilstu.edu</a>.</p>
+
+    <h3>Favorite Sites</h3>
+    <ol>
+        <li><a target="_blank" href="http://www.reddit.com/">Reddit</a></li>
+        <li><a target="_blank" href="http://www.netflix.com/">Netflix</a></li>
+        <li><a target="_blank" href="http://www.amazon.com/">Amazon</a></li>
+        <li><a target="_blank" href="http://thecodinglove.com/">the_coding_love();</a></li>
+    </ol>
+
+    <h3>Hobbies</h3>
+    <ul>
+        <li>Books</li>
+        <li>Poker <span class="red">&hearts;</span> <span>&spades;</span> <span class="red">&diams;</span> <span>&clubs;</span></li>
+        <li>Playing videogames</li>
+    </ul>
+
+    <img src="../images/technology.gif" class="img-rounded center-block">
+
+    <p><i><small><a href="#lab1">Click</a> to go back to top of the page.</small></i></p>
+</div>
+
+<script src="../js/jquery-1.12.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/lab1.js"></script>
 </body>
 </html>
