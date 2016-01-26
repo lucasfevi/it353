@@ -1,5 +1,9 @@
-body {
+body#home {
 	padding-top: 50px;
+}
+
+body#lab1 {
+	background-color: #fafafa;
 }
 
 .jumbotron {
