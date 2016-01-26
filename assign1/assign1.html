@@ -188,10 +188,28 @@ alert("Hello " + lastName + ", " + firstName + "! Welcome to ITK353.");</pre>
             </tr>
         </tbody>
     </table>
+
+    <h3>HTML 5 Video</h3>
+
+    <p><strong>Check the video below, it is hilarious!</strong></p>
+
+    <video width="480" controls>
+        <source src="../videos/Wat.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h3>HTML 5 Local Storage and contenteditable Attribute</h3>
+
+    <p><strong>You can click on the content below to edit it and then refresh the page to see the result!</strong></p>
+
+    <p class="text-info" contenteditable="true" id="pContent"></p>
+
+    <p class="text-right"><i><small><a href="#assign1">Click</a> to go back to top of the page.</small></i></p>
 </div>
 
 <script src="../js/jquery-1.12.0.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/hello.js"></script>
+<script src="../js/local-storage.js"></script>
 </body>
 </html>
