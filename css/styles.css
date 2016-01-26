@@ -13,3 +13,11 @@ body#lab1 {
 .red {
 	color: red;
 }
+
+#tableSample.table > tbody > tr > td {
+	vertical-align: middle;
+}
+
+#tableSample.table > tbody > tr > td[rowspan] {
+	text-align: center;
+}

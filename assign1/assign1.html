@@ -14,7 +14,7 @@
 <body id="assign1">
 
 <div class="container">
-    <h1>Assignment 1</h1>
+    <h1>Lab 1</h1>
     <hr>
 
     <h3>About me</h3>
@@ -63,6 +63,131 @@ alert("Hello " + lastName + ", " + firstName + "! Welcome to ITK353.");</pre>
     <p>They also said they already have the majority of technology need to do that, which is basically Google Maps application plus geolocation, which exists on most of mobile devices. But the bigger issue is privacy. For this kind of technology to work properly, you would need to be connected the whole time and Google would know where you have been the entire day. And that could scare most people.</p>
 
     <p class="text-right"><i><small><a href="#assign1">Click</a> to go back to top of the page.</small></i></p>
+
+    <h1>Assignment 1</h1>
+    <hr>
+
+    <h3>Form Sample</h3>
+
+    <form class="form-horizontal" method="get" action="http://was6.itk.ilstu.edu:9080/itk/EchoAll">
+        <div class="form-group">
+            <label for="inptUsername" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-4">
+                <input type="text" name="username" id="inptUsername" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inptPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-4">
+                <input type="password" name="password" id="inptPassword" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Gender</label>
+            <div class="col-sm-4">
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="male"> Male
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="gender" value="female"> Female
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inptAbout" class="col-sm-2 control-label">About</label>
+            <div class="col-sm-4">
+                <textarea name="about" id="inptAbout" class="form-control" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inptMonth" class="col-sm-2 control-label">Month of birth</label>
+            <div class="col-sm-4">
+                <select name="month" id="inptMonth" class="form-control">
+                    <option value="">Select one</option>
+                    <option value="january">January</option>
+                    <option value="february">February</option>
+                    <option value="march">March</option>
+                    <option value="april">April</option>
+                    <option value="may">May</option>
+                    <option value="june">June</option>
+                    <option value="july">July</option>
+                    <option value="august">August</option>
+                    <option value="september">September</option>
+                    <option value="october">October</option>
+                    <option value="november">November</option>
+                    <option value="december">December</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <div class="checkbox">
+                    <label>
+                        <input name="rememberMe" type="checkbox"> Remember me
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <input type="hidden" name="class" value="itk353">
+                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
+            </div>
+        </div>
+    </form>
+
+    <h3>Table Sample</h3>
+
+    <table id="tableSample" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Gender</th>
+                <th>Month of birth</th>
+                <th>About</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>ldacruz</td>
+                <td rowspan="3">Male</td>
+                <td>May</td>
+                <td>Lorem ipsum dolor sit amet, consectetur.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>lvieira</td>
+                <td colspan="2">n/a</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>malves</td>
+                <td>December</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, cupiditate.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>acunha</td>
+                <td rowspan="2">Female</td>
+                <td>February</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>dmartins</td>
+                <td colspan="2">n/a</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <script src="../js/jquery-1.12.0.min.js"></script>
