@@ -1,3 +1,6 @@
+/**
+ * Score functions
+ */
 function score()
 {
     var nScores = prompt('Enter the # of scores:', 3);
@@ -55,4 +58,31 @@ function getAverageScore(arrScores)
 function showHigherThanAverageScores(arrScores)
 {
     return '12,30,42,60';
+}
+
+/**
+ * Employee functions
+ */
+function employee()
+{
+    var name = prompt('Insert your name');
+    var ssn = prompt('Insert your SSN');
+    var rateOfPay = parseFloat(prompt('Insert your rate of pay'));
+    var hoursWorked = parseFloat(prompt('Insert hours worked'));
+
+    var msg = name + ' - ' + ssn + '\n';
+    msg += 'Rate of pay: $' + rateOfPay + '/h\n';
+    msg += 'Hours worked: ' + hoursWorked + 'h\n';
+    msg += 'Total: ' + getTotalPay(hoursWorked, rateOfPay);
+
+    alert(msg);
+}
+
+function getTotalPay(hoursWorked, rateOfPay)
+{
+    if (hoursWorked > 40) {
+        return 40 * rateOfPay + (hoursWorked - 40) * rateOfPay * 1.5;
+    }
+
+    return hoursWorked * rateOfPay;
 }
