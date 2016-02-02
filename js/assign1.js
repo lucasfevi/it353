@@ -1,4 +1,19 @@
 /**
+ * CSS functions
+ */
+function addCSS()
+{
+    // Create a new element dynamically as follows
+    var newlink = document.createElement("link")
+    newlink.setAttribute("rel", "stylesheet");
+    newlink.setAttribute("type", "text/css");
+    newlink.setAttribute("href", "../css/assign1.css");
+
+    // Append it to the head tag
+    document.getElementsByTagName("head").item(0).appendChild(newlink);
+}
+
+/**
  * Score functions
  */
 function score()

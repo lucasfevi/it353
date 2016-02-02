@@ -1,0 +1,15 @@
+body {
+	background-image: url('../images/assign1-background.jpg');
+}
+
+#tableSample th {
+	color: yellow;
+	font-size: 14px;
+	background-color: blue;
+}
+
+.content {
+	background-color: #eee;
+	padding: 15px;
+	border: 1px solid #ccc;
+}
