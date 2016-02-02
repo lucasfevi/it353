@@ -5,21 +5,21 @@ function score()
 {
     var nScores = prompt('Enter the # of scores:', 3);
     var arrScores = new Array();
-    var msg;
+    var message;
 
     for (var i = 0; i < nScores; i++)
     {
         arrScores[i] = parseInt(prompt('Enter score number ' + (i + 1)));
     }
 
-    msg  = 'Lucas Vieira\'s Output\n';
-    msg += 'Lowest = ' + getLowestScore(arrScores) + '\n';
-    msg += 'Highest = ' + getHighestScore(arrScores) + '\n';
-    msg += 'Average = ' + getAverageScore(arrScores) + '\n';
-    msg += 'Scores > Average:\n';
-    msg += showHigherThanAverageScores(arrScores);
+    message  = 'Lucas Vieira\'s Output\n';
+    message += 'Lowest = ' + getLowestScore(arrScores) + '\n';
+    message += 'Highest = ' + getHighestScore(arrScores) + '\n';
+    message += 'Average = ' + getAverageScore(arrScores) + '\n';
+    message += 'Scores > Average:\n';
+    message += showHigherThanAverageScores(arrScores);
 
-    console.log(msg);
+    alert(message);
 }
 
 function getLowestScore(arrScores)
@@ -50,14 +50,28 @@ function getHighestScore(arrScores)
 
 function getAverageScore(arrScores)
 {
-    var averageScore = 0;
+    var sum = 0;
 
-    return averageScore;
+    for (var i = 0; i < arrScores.length; i++)
+    {
+        sum += arrScores[i];
+    }
+
+    return sum / arrScores.length;
 }
 
 function showHigherThanAverageScores(arrScores)
 {
-    return '12,30,42,60';
+    var average = getAverageScore(arrScores);
+    var arrHigher = new Array();
+
+    for (var i = 0; i < arrScores.length; i++)
+    {
+        if (arrScores[i] > average)
+            arrHigher.push(arrScores[i]);
+    }
+
+    return arrHigher.join(',');
 }
 
 /**
@@ -70,12 +84,12 @@ function employee()
     var rateOfPay = parseFloat(prompt('Insert your rate of pay'));
     var hoursWorked = parseFloat(prompt('Insert hours worked'));
 
-    var msg = name + ' - ' + ssn + '\n';
-    msg += 'Rate of pay: $' + rateOfPay + '/h\n';
-    msg += 'Hours worked: ' + hoursWorked + 'h\n';
-    msg += 'Total: ' + getTotalPay(hoursWorked, rateOfPay);
+    var message = name + ' - ' + ssn + '\n';
+    message += 'Rate of pay: $' + rateOfPay + '/h\n';
+    message += 'Hours worked: ' + hoursWorked + 'h\n';
+    message += 'Total: ' + getTotalPay(hoursWorked, rateOfPay);
 
-    alert(msg);
+    alert(message);
 }
 
 function getTotalPay(hoursWorked, rateOfPay)
@@ -85,4 +99,32 @@ function getTotalPay(hoursWorked, rateOfPay)
     }
 
     return hoursWorked * rateOfPay;
+}
+
+/**
+ * Form validations
+ */
+function validateForm(form)
+{
+    validateZipCode(form.zipcode.value);
+
+    return false;
+}
+
+function validateZipCode(zipCode)
+{
+    if (zipCode.length != 10 && zipCode.length != 5) {
+        return false;
+    }
+
+    var arrZipCode = zipCode.split('');
+
+    for (var i in arrZipCode)
+    {
+        if (isNaN(arrZipCode[i])) {
+            return false;
+        }
+    }
+
+    return true;
 }

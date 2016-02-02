@@ -221,10 +221,20 @@ alert("Hello " + lastName + ", " + firstName + "! Welcome to ITK353.");</pre>
     </div>
 
     <h3>JavaScript Scores</h3>
-    <p><a href="javascript:;" onclick="score()">Click to run it!</a></p>
+    <div>
+        <p><a href="javascript:;" onclick="score()">Click to run it!</a></p>
+
+        <p><strong>Screenshots</strong></p>
+
+        <img width="380" src="../images/scores-test-1.png" alt="scores-test-1" class="img-thumbnail">
+        <img width="380" src="../images/scores-test-2.png" alt="scores-test-2" class="img-thumbnail">
+        <img width="380" src="../images/scores-test-3.png" alt="scores-test-3" class="img-thumbnail">
+        <img width="380" src="../images/scores-test-4.png" alt="scores-test-4" class="img-thumbnail">
+        <img width="380" src="../images/scores-test-5.png" alt="scores-test-5" class="img-thumbnail">
+        <img width="380" src="../images/scores-test-6.png" alt="scores-test-6" class="img-thumbnail">
+    </div>
 
     <h3>JavaScript Employee</h3>
-
     <div>
         <p><a href="javascript:;" onclick="employee()">Click to run it!</a></p>
 
@@ -233,6 +243,62 @@ alert("Hello " + lastName + ", " + firstName + "! Welcome to ITK353.");</pre>
         <img width="380" src="../images/employee-test-1.png" alt="employee-test-1" class="img-thumbnail">
         <img width="380" src="../images/employee-test-2.png" alt="employee-test-2" class="img-thumbnail">
         <img width="380" src="../images/employee-test-3.png" alt="employee-test-3" class="img-thumbnail">
+    </div>
+
+    <h3>Form Validations</h3>
+    <div>
+        <form class="form-horizontal" onsubmit="return validateForm(this)">
+            <div class="form-group">
+                <label for="inptName" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-4">
+                    <input required type="text" name="name" id="inptName" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Gender</label>
+                <div class="col-sm-4">
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" value="male" required> Male
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="gender" value="female" required> Female
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inptEmail" class="col-sm-2 control-label">E-mail</label>
+                <div class="col-sm-4">
+                    <input required type="email" name="email" id="inptEmail" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inptZipCode" class="col-sm-2 control-label">Zip Code</label>
+                <div class="col-sm-4">
+                    <input required type="text" name="zipcode" id="inptZipCode" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inptAge" class="col-sm-2 control-label">Age</label>
+                <div class="col-sm-4">
+                    <select required name="age" id="inptAge" class="form-control">
+                        <option value="">Select Age ...</option>
+                        <option value="a">Below 18</option>
+                        <option value="b">18-39</option>
+                        <option value="c">40 or above</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
     </div>
 
     <p class="text-right"><i><small><a href="#assign1">Click</a> to go back to top of the page.</small></i></p>
