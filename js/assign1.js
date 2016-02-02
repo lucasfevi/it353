@@ -1,5 +1,5 @@
 /**
- * CSS functions
+ * Add a new CSS file to change the style of the page.
  */
 function addCSS()
 {
@@ -14,7 +14,9 @@ function addCSS()
 }
 
 /**
- * Score functions
+ * Prompt the user to input N scores and show him the lowest, the highest
+ * and the average number. Also show him all the numbers higher than the
+ * average one.
  */
 function score()
 {
@@ -37,6 +39,13 @@ function score()
     alert(message);
 }
 
+/**
+ * Get the lowest score on the array.
+ *
+ * @param  Array    arrScores   an array with scores
+ *
+ * @return int                  the lowest score
+ */
 function getLowestScore(arrScores)
 {
     var lowestScore = arrScores[0];
@@ -50,6 +59,13 @@ function getLowestScore(arrScores)
     return lowestScore;
 }
 
+/**
+ * Get the highest score on the array.
+ *
+ * @param  Array    arrScores   an array with scores
+ *
+ * @return int                  the highest score
+ */
 function getHighestScore(arrScores)
 {
     var highestScore = arrScores[0];
@@ -63,6 +79,13 @@ function getHighestScore(arrScores)
     return highestScore;
 }
 
+/**
+ * Get the average score on the array.
+ *
+ * @param  Array    arrScores   an array with scores
+ *
+ * @return int                  the average score
+ */
 function getAverageScore(arrScores)
 {
     var sum = 0;
@@ -75,6 +98,13 @@ function getAverageScore(arrScores)
     return sum / arrScores.length;
 }
 
+/**
+ * Get all the scores higher than the average score.
+ *
+ * @param  Array    arrScores   an array with scores
+ *
+ * @return Array                an array with all scores higher than the average
+ */
 function showHigherThanAverageScores(arrScores)
 {
     var average = getAverageScore(arrScores);
@@ -90,7 +120,9 @@ function showHigherThanAverageScores(arrScores)
 }
 
 /**
- * Employee functions
+ * Prompt the user for some variables necessary to calculate
+ * how much an employee should be paid based on his hours worked
+ * and rate of pay.
  */
 function employee()
 {
@@ -107,6 +139,15 @@ function employee()
     alert(message);
 }
 
+/**
+ * Do the math necessary to get the total pay based on hoursWorked
+ * and rateOfPay variables.
+ *
+ * @param  float    hoursWorked     how many hours the employee worked
+ * @param  float    rateOfPay       how much employee receive per hour
+ *
+ * @return float                    total pay employee should receive
+ */
 function getTotalPay(hoursWorked, rateOfPay)
 {
     if (hoursWorked > 40) {
@@ -121,12 +162,19 @@ function getTotalPay(hoursWorked, rateOfPay)
  */
 function validateForm(form)
 {
-    validateZipCode(form.zipcode.value);
+    isValidZipCode(form.zipcode.value);
 
     return false;
 }
 
-function validateZipCode(zipCode)
+/**
+ * Check if the zipCode variable is a valid zip code.
+ *
+ * @param  String   zipCode     zip code to be validate
+ *
+ * @return boolean              true if valid false if not valid
+ */
+function isValidZipCode(zipCode)
 {
     if (zipCode.length != 10 && zipCode.length != 5) {
         return false;
@@ -136,6 +184,10 @@ function validateZipCode(zipCode)
 
     for (var i in arrZipCode)
     {
+        if (i == 5 && arrZipCode[i] == '-') {
+            continue;
+        }
+
         if (isNaN(arrZipCode[i])) {
             return false;
         }
