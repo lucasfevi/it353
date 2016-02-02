@@ -2,6 +2,10 @@ body {
 	background-image: url('../images/assign1-background.jpg');
 }
 
+h1, h2, h3, h4 {
+	color: #eee;
+}
+
 #tableSample th {
 	color: yellow;
 	font-size: 14px;
