@@ -162,9 +162,15 @@ function getTotalPay(hoursWorked, rateOfPay)
  */
 function validateForm(form)
 {
-    isValidZipCode(form.zipcode.value);
+    if (!isValidEmail(form.email.value)) {
+        return false;
+    }
 
-    return false;
+    if (!isValidZipCode(form.zipcode.value)) {
+        return false;
+    }
+
+    return true;
 }
 
 /**
@@ -177,6 +183,7 @@ function validateForm(form)
 function isValidZipCode(zipCode)
 {
     if (zipCode.length != 10 && zipCode.length != 5) {
+        alert('Zip code length is incorrect.');
         return false;
     }
 
@@ -184,14 +191,74 @@ function isValidZipCode(zipCode)
 
     for (var i in arrZipCode)
     {
-        if (i == 5 && arrZipCode[i] == '-') {
-            continue;
+        if (i == 5 && arrZipCode[i] != '-') {
+            alert('Invalid zip code.');
+            return false;
         }
 
-        if (isNaN(arrZipCode[i])) {
+        if (i != 5 && isNaN(arrZipCode[i])) {
+            alert('Invalid zip code.');
             return false;
         }
     }
 
     return true;
+}
+
+/**
+ * Check if the email variable is a valid e-mail.
+ *
+ * @param  String   email   e-mail to be validate
+ *
+ * @return boolean          true if valid false if not valid
+ */
+function isValidEmail(email)
+{
+    if (email.indexOf('@') == -1) {
+        alert("Your e-mail need an '@' to be valid.");
+        return false;
+    }
+
+    if (numberOfOccurrences(email, '@') > 1) {
+        alert("You can't use more than one '@' in an e-mail.");
+        return false;
+    }
+
+    if (email.indexOf('@') == 0 || email.indexOf('@') == email.length - 1) {
+        alert("You can't use '@' in beginning or end of an e-mail.");
+        return false;
+    }
+
+    if (email.indexOf('.') == 0 || email.indexOf('.') == email.length - 1) {
+        alert("You can't use '.' in beginning or end of an e-mail.");
+        return false;
+    }
+
+    var splitEmail = email.split('@');
+    var periodIndex = splitEmail[1].indexOf('.');
+
+    if (periodIndex == -1) {
+        alert("You need to add atleast one '.' after '@' in an e-mail.");
+        return false;
+    }
+
+    if (periodIndex == 0) {
+        alert("You can't use '.' directly after '@' in an e-mail.");
+        return false;
+    }
+
+    return true;
+}
+
+/**
+ * Return the number of occurrences of a string in a string.
+ *
+ * @param  String   haystack  the string to look at
+ * @param  String   needle    the string to search for
+ *
+ * @return int                number of occurrences
+ */
+function numberOfOccurrences(haystack, needle)
+{
+    return haystack.split(needle).length - 1;
 }
