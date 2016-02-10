@@ -7,6 +7,7 @@ document.image1.onmouseout = function() {
 	this.src = '../images/button-14-off.gif';
 }
 
+// A - II
 document.form1.onsubmit = function() {
 	return submitMe(this);
 }
