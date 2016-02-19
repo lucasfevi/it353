@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Quiz</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Quiz</h1>
+    <hr>
+
+    <div class="col-sm-2">
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active">
+                <a href="#questionOne" aria-controls="questionOne" role="tab" data-toggle="tab">Question 1</a>
+            </li>
+            <li role="presentation">
+                <a href="#questionTwo" aria-controls="questionTwo" role="tab" data-toggle="tab">Question 2</a>
+            </li>
+            <li role="presentation">
+                <a href="#questionThree" aria-controls="questionThree" role="tab" data-toggle="tab">Question 3</a>
+            </li>
+            <li role="presentation">
+                <a href="#questionFour" aria-controls="questionFour" role="tab" data-toggle="tab">Question 4</a>
+            </li>
+            <li role="presentation">
+                <a href="#questionFive" aria-controls="questionFive" role="tab" data-toggle="tab">Question 5</a>
+            </li>
+            <li role="presentation">
+                <a href="#questionSix" aria-controls="questionSix" role="tab" data-toggle="tab">Question 6</a>
+            </li>
+            <li role="presentation">
+                <a href="#questionSeven" aria-controls="questionSeven" role="tab" data-toggle="tab">Question 7</a>
+            </li>
+            <li role="presentation">
+                <a href="#questionEight" aria-controls="questionEight" role="tab" data-toggle="tab">Question 8</a>
+            </li>
+            <li role="presentation">
+                <a href="#questionNine" aria-controls="questionNine" role="tab" data-toggle="tab">Question 9</a>
+            </li>
+            <li role="presentation">
+                <a href="#results" aria-controls="results" role="tab" data-toggle="tab">Results</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-10">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="questionOne">
+                <h3>A webpage displays a picture. What tag was used to display that picture?</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>img</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionOne" id="questionOneOpt1" value="a">
+                            picture
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionOne" id="questionOneOpt1" value="b">
+                            image
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionOne" id="questionOneOpt1" value="c">
+                            img
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionOne" id="questionOneOpt1" value="d">
+                            src
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#questionTwo">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="questionTwo">
+                <h3>Which tag inserts a line horizontally on your web page?</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>hr</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionTwo" id="questionTwoOpt1" value="a">
+                            hr
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionTwo" id="questionTwoOpt1" value="b">
+                            line
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionTwo" id="questionTwoOpt1" value="c">
+                            br
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionTwo" id="questionTwoOpt1" value="d">
+                            tr
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#questionThree">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="questionThree">
+                <h3>Which attribute is used to name an element uniquely?</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>id</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionThree" id="questionThreeOpt1" value="a">
+                            class
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionThree" id="questionThreeOpt1" value="b">
+                            id
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionThree" id="questionThreeOpt1" value="c">
+                            dot
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="questionThree" id="questionThreeOpt1" value="d">
+                            all of above
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#questionFour">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="questionFour">
+                <h3>CSS stands for Cascading Style Sheets.</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>true</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <select name="questionFour" class="form-control">
+                        <option value=""></option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#questionFive">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="questionFive">
+                <h3>JavaScript is a typed language.</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>false</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <select name="questionFive" class="form-control">
+                        <option value=""></option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#questionSix">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="questionSix">
+                <h3>jQuery is an HTML library.</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>false</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <select name="questionSix" class="form-control">
+                        <option value=""></option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#questionSeven">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="questionSeven">
+                <h3>MVC stands for Model View __________</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>controller</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <input type="text" class="form-control" name="questionSeven">
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#questionEight">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="questionEight">
+                <h3>The __________ or Not Found error message is an HTTP standard response code indicating that the client was able to communicate with a given server, but the server could not find what was requested.</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>404</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <input type="text" class="form-control" name="questionEight">
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#questionNine">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="questionNine">
+                <h3>A __________ is a signal that tells the debugger to temporarily suspend execution of your program at a certain point.</h3>
+                <div class="alert alert-danger hide" role="alert">
+                    <p><strong>Wrong!</strong> The correct answer was: <strong>breakpoint</strong>.</p>
+                </div>
+                <div class="alert alert-success hide" role="alert">
+                    <p><strong>Correct!</strong></p>
+                </div>
+                <div class="well">
+                    <input type="text" class="form-control" name="questionNine">
+                </div>
+                <button type="button" class="submit btn btn-primary">Submit</button>
+                <button type="button" class="next btn btn-success" data-target="#results">Next</button>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="results">
+                <h3>Results</h3>
+                <div class="well">
+                    <ol>
+                        <li id="answer0">Unanswered</li>
+                        <li id="answer1">Unanswered</li>
+                        <li id="answer2">Unanswered</li>
+                        <li id="answer3">Unanswered</li>
+                        <li id="answer4">Unanswered</li>
+                        <li id="answer5">Unanswered</li>
+                        <li id="answer6">Unanswered</li>
+                        <li id="answer7">Unanswered</li>
+                        <li id="answer8">Unanswered</li>
+                    </ol>
+                    <p><strong>Total:</strong> <span id="corrects">0</span> out of 9 questions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../js/jquery-1.12.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/quiz.js"></script>
+</body>
+</html>
