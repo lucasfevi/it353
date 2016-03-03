@@ -9,12 +9,12 @@ package model;
  * @author bllim
  */
 public class ProfileBean {
-   // These correspond to the form elements
-private String clientName;
-private String gender;
-private String position;
-private String[] industries;
-private String[] interests;
+    // These correspond to the form elements
+    private String clientName;
+    private String gender;
+    private String position;
+    private String[] industries;
+    private String[] interests;
 
     /**
      * @return the clientName
@@ -85,6 +85,5 @@ private String[] interests;
     public void setInterests(String[] interests) {
         this.interests = interests;
     }
-
 
 }
