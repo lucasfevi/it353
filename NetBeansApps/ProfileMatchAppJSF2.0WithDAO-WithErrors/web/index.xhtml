@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>JSF 2.0 101</title>
+    </h:head>
+    <h:body>
+        <h2>Financial Consultation Request</h2><br/>
+        <h:form>
+            Name: <h:inputText id="nameID" value="#{profileController.theModel.clientName}">
+            </h:inputText> <br/><br/>
+            Gender: <h:selectOneRadio id="genderID" value="#{profileController.theModel.gender}">
+                <f:selectItem id="itemFemale" itemLabel="Female" itemValue="female" />
+                <f:selectItem id="itemMale" itemLabel="Male" itemValue="male" />
+            </h:selectOneRadio><br/>
+            Position: <h:selectOneMenu id="positionID" value="#{profileController.theModel.position}">
+                <f:selectItem id="itemCEO" itemLabel="CEO" itemValue="CEO" />
+                <f:selectItem id="itemJavaDeveloper" itemLabel="Java Developer" itemValue="Java developer" />
+                <f:selectItem id="itemProfessor" itemLabel="Professor" itemValue="professor" />
+            </h:selectOneMenu><br/><br/>
+            Industries: <h:selectManyListbox
+                id="industriesID"
+                value="#{profileController.theModel.industries}">
+                <f:selectItem id="itemEducation" itemLabel="Education" itemValue="Education" />
+                <f:selectItem id="itemFinancial" itemLabel="Financial" itemValue="Financial" />
+                <f:selectItem id="itemRetail" itemLabel="Retail" itemValue="Retail" />
+                <f:selectItem id="itemEntertainment" itemLabel="Entertainment" itemValue="Entertainment" />
+            </h:selectManyListbox><br/><br/>
+            Interests: <h:selectManyCheckbox id="interestsID" value="#{profileController.theModel.interests}">
+                <f:selectItem id="itemTravel" itemLabel="Travel" itemValue="Travel" />
+                <f:selectItem id="itemReading" itemLabel="Reading" itemValue="Reading" />
+                <f:selectItem id="itemProgramming" itemLabel="Programming" itemValue="Programming" />
+            </h:selectManyCheckbox><br/><br/>
+            <h:commandButton id="submitID" value="Submit" action="#{profileController.createProfile()}"/>
+        </h:form>
+
+    </h:body>
+</html>
+
