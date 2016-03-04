@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>DataTable 101</title>
+    </h:head>
+    <h:body>
+        <h2>Real Employee Data (from DB)</h2>
+        <h:dataTable id="empTableID" value="#{deptEmpController.department.employees}" var="aRow"
+                     border="1" cellpadding="2" cellspacing="0">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Emp NO"/>
+                </f:facet>
+                <h:outputText value="#{aRow.empNo}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Gender"/>
+                </f:facet>
+                <h:outputText value="#{aRow.gender}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Last Name"/>
+                </f:facet>
+                <h:outputText value="#{aRow.lastName}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Salary"/>
+                </f:facet>
+                <h:outputText value="#{aRow.salary}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Hire Date"/>
+                </f:facet>
+                <h:outputText value="#{aRow.hireDate}"/>
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+

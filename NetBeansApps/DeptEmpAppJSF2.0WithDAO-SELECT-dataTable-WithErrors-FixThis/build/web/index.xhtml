@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>JSF 2.0 101</title>
+    </h:head>
+    <h:body>
+        <h2>Retrieve Employees for a Department</h2><br/>
+        <h:form>
+            Department No: <h:inputText id="deptNo" value="#{deptEmpController.department.deptNo}">
+                <f:validateLongRange
+                    minimum="#{deptEmpController.department.minimum}"
+                    maximum="#{deptEmpController.department.maximum}"/>
+            </h:inputText><h:message showSummary="true" showDetail="false"
+                style="color: red;
+                 font-family: 'New Century Schoolbook', serif;
+                 font-style: oblique"
+                 id="errors1"
+                 for="deptNo"/><br/><br/>
+            <h:commandButton id="submitID" value="Submit" action="RealDataTable.xhtml"/>
+            
+        </h:form>
+
+    </h:body>
+</html>
+
