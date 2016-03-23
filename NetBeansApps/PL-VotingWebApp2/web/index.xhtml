@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+   <h:body>
+        <h2>Vote for your Favorite Programming Language:</h2><br/>
+        <h:form>
+            Programming Language: <h:selectOneRadio id="plID" value="#{votingController.lang}">
+                <f:selectItem id="JavaID" itemLabel="Java" itemValue="Java" />
+                <f:selectItem id="COBOLID" itemLabel="COBOL" itemValue="COBOL" />
+                <f:selectItem id="JavaScriptID" itemLabel="JavaScript" itemValue="JavaScript" />
+                <f:selectItem id="CSharpID" itemLabel="CSharp" itemValue="CSharp" />
+            </h:selectOneRadio><br/>
+            <h:commandButton id="submitID" value="Submit" action="#{votingController.registerMyVote()}"/>
+        </h:form>
+
+    </h:body>
+</html>
+
