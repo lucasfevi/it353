@@ -1,1 +1,44 @@
 Wed Mar 23 17:32:59 CDT 2016 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Wed Mar 23 20:53:21 CDT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0153-a59c-0519-00002e5c4fe8 
+on database directory /Users/lucasfevi/Projects/it353/DerbyDBFiles/Project353 with class loader sun.misc.Launcher$AppClassLoader@234f79cb 
+Loaded from file:/Applications/NetBeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b15
+user.dir=/Applications/NetBeans/glassfish-4.1.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.11.4
+derby.system.home=/Users/lucasfevi/Projects/it353/DerbyDBFiles
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Mar 23 20:53:23 CDT 2016:
+Shutting down instance a816c00e-0153-a59c-0519-00002e5c4fe8 on database directory /Users/lucasfevi/Projects/it353/DerbyDBFiles/Project353 with class loader sun.misc.Launcher$AppClassLoader@234f79cb 
+Wed Mar 23 20:53:23 CDT 2016 Thread[DRDAConnThread_3,5,main] (DATABASE = Project353), (DRDAID = {2}), Database 'Project353' shutdown.
+----------------------------------------------------------------
+Wed Mar 23 20:54:09 CDT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance 560740aa-0153-a59c-0519-00002e5c4fe8 
+on database directory /Users/lucasfevi/Projects/it353/DerbyDBFiles/Project353 with class loader sun.misc.Launcher$AppClassLoader@234f79cb 
+Loaded from file:/Applications/NetBeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b15
+user.dir=/Applications/NetBeans/glassfish-4.1.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.11.4
+derby.system.home=/Users/lucasfevi/Projects/it353/DerbyDBFiles
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Mar 23 20:57:53 CDT 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance b278c0c3-0153-a59c-0519-00002e5c4fe8 
+on database directory /Users/lucasfevi/Projects/it353/DerbyDBFiles/Profile with class loader sun.misc.Launcher$AppClassLoader@234f79cb 
+Loaded from file:/Applications/NetBeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b15
+user.dir=/Applications/NetBeans/glassfish-4.1.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.11.4
+derby.system.home=/Users/lucasfevi/Projects/it353/DerbyDBFiles
+Database Class Loader started - derby.database.classpath=''
