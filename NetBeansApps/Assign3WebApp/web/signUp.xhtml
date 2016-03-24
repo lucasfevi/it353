@@ -68,7 +68,9 @@
                                     <h:inputText value="#{usersController.theModel.secAnswer}" id="secAnswer" a:placeholder="Security Answer" styleClass="form-control input-sm" required="true" requiredMessage="Security answer is required" />
                                 </h:panelGroup>
 			    	
-                                <h:commandButton id="submit" value="Register" styleClass="btn btn-info btn-block" action="#{usersController.createUser()}"/>
+                                <h:commandButton id="register" value="Register" styleClass="btn btn-info btn-block" action="#{usersController.createUser()}"/>
+                                
+                                <h:link outcome="login" value="Sign In" styleClass="btn btn-warning btn-block" id="login" />
 			    		
                             </h:form>
                         </h:panelGroup>

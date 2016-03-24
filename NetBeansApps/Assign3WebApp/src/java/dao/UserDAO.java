@@ -28,18 +28,21 @@ public class UserDAO {
                 Statement stmt = DBConn.createStatement();
                 String insertString;
                 insertString = "INSERT INTO Project353.Users (first_name,"
-                    + "last_name, email, username, password, sec_question, sec_answer)"
+                    + "last_name, email, username, sec_question, sec_answer)"
                     + " VALUES ('"
                     + theModel.getFirstName() + "','"
                     + theModel.getLastName() + "','"
                     + theModel.getEmail() + "','"
                     + theModel.getUsername() + "','"
-                    + theModel.getPassword() + "','"
                     + theModel.getSecQuestion() + "','"
                     + theModel.getSecAnswer() + "')";
-                
                 rowCount = stmt.executeUpdate(insertString);
-                System.out.println("SQL INSERT = " + insertString);            
+                
+                insertString = "INSERT INTO Project353.LoginInfo VALUES ('"
+                    + theModel.getUsername() + "','"
+                    + theModel.getPassword() + "')";
+                rowCount = stmt.executeUpdate(insertString);
+                
                 DBConn.close();
             }
         } catch (SQLException e) {
@@ -48,6 +51,7 @@ public class UserDAO {
             System.err.println(e.getMessage());
         }
 
+        System.out.println("rowCount = " + rowCount);
         return rowCount == 1;
     }
     
