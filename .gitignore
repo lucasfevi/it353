@@ -1,7 +1,10 @@
 .DS_Store
+/DerbyDBFiles/derby.log
 /NetBeansApp/ProfileMatchAppJSF2.x/nbproject/private/
 /NetBeansApp/ProfileMatchAppJSF2.x/build/
 /NetBeansApps/JSF 2.x LoginApp/nbproject/private/
 /NetBeansApps/JSF 2.x LoginApp/build/
 /NetBeansApps/ProfileMatchAppJSF2.0WithDAO-WithErrors/build/
 /NetBeansApps/ProfileMatchAppJSF2.0WithDAO-WithErrors/nbproject/private/
+/NetBeansApps/Lab3/nbproject/private/
+/NetBeansApps/Lab3/build/

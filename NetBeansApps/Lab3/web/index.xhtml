@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html">
+    <h:body>
+        <ui:composition template="/WEB-INF/includes/template.xhtml">
+
+            <ui:define name="htmlHead">
+                <title>Redbird Country - Home</title>
+            </ui:define>
+
+            <ui:define name="navigation">
+                <ul>
+                    <li><h:outputText styleClass="selected" value="Home" /></li>
+                    <li><h:link outcome="products" value="Products" /></li>
+                    <li><h:link outcome="contact-us" value="Contact Us" /></li>
+                </ul>
+            </ui:define>
+
+            <ui:define name="main">
+                <h:outputText value="Welcome to the HOME page." />
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>

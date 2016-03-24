@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header, .footer {
+    padding: 2px 10px;
+    background-color: red;
+    color: black;
+}
+
+.footer {
+    clear: both;
+}
+
+.nav {
+    margin: 1px 0;
+    width: 10%;
+    height: 55px;
+    float: left
+}
+
+.content {
+    margin: 1px 0;
+    width: 90%;
+    height: 55px;
+    float: left;
+    background-color: red;
+    color: white;
+}
+
+.selected {
+    color: red;
+    font-weight: bold;
+}
