@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Lab3" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Lab3.</description>
+<project name="Lab3WebPage" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Lab3WebPage.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
