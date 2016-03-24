@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
@@ -19,27 +20,32 @@
                         </h:panelGroup>
                         <h:panelGroup layout="block" styleClass="panel-body">
                             <h:form id="signUpForm">
+                                <f:event listener="#{usersController.theModel.validatePassword}" type="postValidate" />
                                 <h:panelGroup layout="block" styleClass="row">
                                     <h:panelGroup layout="block" styleClass="col-xs-6 col-sm-6 col-md-6">
                                         <h:panelGroup layout="block" styleClass="form-group">
-                                            <h:inputText value="#{usersController.theModel.firstName}" id="firstName" a:placeholder="First Name" styleClass="form-control input-sm" />
+                                            <h:inputText value="#{usersController.theModel.firstName}" id="firstName" a:placeholder="First Name" styleClass="form-control input-sm" required="true" requiredMessage="First name is required">
+                                                <f:validateLength minimum="2" maximum="25" />
+                                            </h:inputText>
                                         </h:panelGroup>
                                     </h:panelGroup>
                                     <h:panelGroup layout="block" styleClass="col-xs-6 col-sm-6 col-md-6">
                                         <h:panelGroup layout="block" styleClass="form-group">
-                                            <h:inputText value="#{usersController.theModel.lastName}" id="lastName" a:placeholder="Last Name" styleClass="form-control input-sm" />
+                                            <h:inputText value="#{usersController.theModel.lastName}" id="lastName" a:placeholder="Last Name" styleClass="form-control input-sm" required="true" requiredMessage="Last name is required">
+                                                <f:validateLength minimum="2" maximum="25" />
+                                            </h:inputText>
                                         </h:panelGroup>
                                     </h:panelGroup>
                                 </h:panelGroup>
                                 
                                 <h:panelGroup layout="block" styleClass="form-group">
-                                    <h:inputText value="#{usersController.theModel.email}" id="email" a:placeholder="E-mail Address" styleClass="form-control input-sm" />
+                                    <h:inputText value="#{usersController.theModel.email}" id="email" a:placeholder="E-mail Address" styleClass="form-control input-sm" required="true" requiredMessage="E-mail is required" />
                                 </h:panelGroup>
                                 
                                 <h:panelGroup layout="block" styleClass="row">
                                     <h:panelGroup layout="block" styleClass="col-xs-6 col-sm-6 col-md-6">
                                         <h:panelGroup layout="block" styleClass="form-group">
-                                            <h:inputSecret value="#{usersController.theModel.password}" id="password" a:placeholder="Password" styleClass="form-control input-sm" />
+                                            <h:inputSecret value="#{usersController.theModel.password}" id="password" a:placeholder="Password" styleClass="form-control input-sm" required="true" requiredMessage="Password is required" />
                                         </h:panelGroup>
                                     </h:panelGroup>
                                     <h:panelGroup layout="block" styleClass="col-xs-6 col-sm-6 col-md-6">
@@ -50,11 +56,11 @@
                                 </h:panelGroup>
                                 
                                 <h:panelGroup layout="block" styleClass="form-group">
-                                    <h:inputText value="#{usersController.theModel.secQuestion}" id="secQuestion" a:placeholder="Security Question" styleClass="form-control input-sm" />
+                                    <h:inputText value="#{usersController.theModel.secQuestion}" id="secQuestion" a:placeholder="Security Question" styleClass="form-control input-sm" required="true" requiredMessage="Security questions is required" />
                                 </h:panelGroup>
                                 
                                 <h:panelGroup layout="block" styleClass="form-group">
-                                    <h:inputText value="#{usersController.theModel.secAnswer}" id="secAnswer" a:placeholder="Security Answer" styleClass="form-control input-sm" />
+                                    <h:inputText value="#{usersController.theModel.secAnswer}" id="secAnswer" a:placeholder="Security Answer" styleClass="form-control input-sm" required="true" requiredMessage="Security answer is required" />
                                 </h:panelGroup>
 			    	
                                 <h:commandButton id="submit" value="Register" styleClass="btn btn-info btn-block" action="#{usersController.createUser()}"/>
