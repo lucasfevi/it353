@@ -13,7 +13,8 @@ import model.UserBean;
 public class UsersController {
 
     private UserBean theModel;
-    private String status;
+        
+    private String response;
     
     /**
      * Creates a new instance of UsersController
@@ -25,9 +26,14 @@ public class UsersController {
     public String createUser() {
         UserDAO userDAO = new UserDAO();
         
-        int rowCount = userDAO.createProfile(theModel);
-        
-        this.status = (rowCount == 1) ? "success" : "error";
+        boolean saved = userDAO.createUser(theModel);
+                
+        if (saved) {
+            theModel.sendConfirmationEmail();
+            this.response = theModel.getUserInfo();
+        } else {
+            this.response = "Couldn't create your account!";
+        }
 
         return "echo.xhtml";
     }
@@ -41,17 +47,17 @@ public class UsersController {
     }
 
     /**
-     * @return the status
+     * @return the response
      */
-    public String getStatus() {
-        return status;
+    public String getResponse() {
+        return response;
     }
 
     /**
-     * @param status the status to set
+     * @param response the response to set
      */
-    public void setStatus(String status) {
-        this.status = status;
+    public void setResponse(String response) {
+        this.response = response;
     }
     
 }

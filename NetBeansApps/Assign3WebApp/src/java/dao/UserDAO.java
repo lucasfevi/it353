@@ -11,7 +11,7 @@ import model.UserBean;
  */
 public class UserDAO {
 
-    public int createProfile(UserBean theModel) {
+    public boolean createUser(UserBean theModel) {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
         } catch (ClassNotFoundException e) {
@@ -45,6 +45,6 @@ public class UserDAO {
             System.err.println(e.getMessage());
         }
 
-        return rowCount;
+        return rowCount == 1;
     }
 }
