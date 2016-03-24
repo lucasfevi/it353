@@ -7,6 +7,7 @@ CREATE TABLE Project353.Users (
   first_name    VARCHAR(25),
   last_name     VARCHAR(25),
   email         VARCHAR(255),
+  username      VARCHAR(25),
   password      VARCHAR(25),
   sec_question  VARCHAR(255),
   sec_answer    VARCHAR(255)

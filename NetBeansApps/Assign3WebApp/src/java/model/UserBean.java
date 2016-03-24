@@ -1,5 +1,6 @@
 package model;
 
+import dao.UserDAO;
 import java.util.Properties;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -28,22 +29,13 @@ public class UserBean {
     private String firstName;
     private String lastName;
     private String email;
+    private String username;
     private String password;
     private String confirmPassword;
     private String secQuestion;
     private String secAnswer;
     
     public UserBean() {}
-    
-    public UserBean(String firstName, String lastName, String email,
-                    String password, String secQuestion, String secAnswer) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.secQuestion = secQuestion;
-        this.secAnswer = secAnswer;
-    }
 
     /**
      * @return the firstName
@@ -143,6 +135,65 @@ public class UserBean {
         this.confirmPassword = confirmPassword;
     }
     
+    public void validateUsername(ComponentSystemEvent event) {
+        FacesContext fc = FacesContext.getCurrentInstance();
+
+        UIComponent components = event.getComponent();
+
+        // get username
+        UIInput uiInputUsername = (UIInput) components.findComponent("username");
+        String userName = uiInputUsername.getLocalValue() == null ? ""
+            : uiInputUsername.getLocalValue().toString();
+        String usernameId = uiInputUsername.getClientId();
+
+        // Let required="true" do its job.
+        if (userName.isEmpty()) {
+            return;
+        }
+        
+        if (!this.userNameIsUnique(userName)) {
+            FacesMessage msg = new FacesMessage("Username already exists");
+            msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+            fc.addMessage(usernameId, msg);
+            fc.renderResponse();
+        }
+    }
+    
+    public void validatePassword(ComponentSystemEvent event) {
+        FacesContext fc = FacesContext.getCurrentInstance();
+
+        UIComponent components = event.getComponent();
+
+        // get password
+        UIInput uiInputPassword = (UIInput) components.findComponent("password");
+        String pass = uiInputPassword.getLocalValue() == null ? ""
+            : uiInputPassword.getLocalValue().toString();
+        String passwordId = uiInputPassword.getClientId();
+
+        // get confirm password
+        UIInput uiInputConfirmPassword = (UIInput) components.findComponent("confirmPassword");
+        String confirmPass = uiInputConfirmPassword.getLocalValue() == null ? ""
+            : uiInputConfirmPassword.getLocalValue().toString();
+
+        // Let required="true" do its job.
+        if (pass.isEmpty() || confirmPass.isEmpty()) {
+            return;
+        }
+
+        if (!pass.equals(confirmPass)) {
+            FacesMessage msg = new FacesMessage("Password must match confirm password");
+            msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+            fc.addMessage(passwordId, msg);
+            fc.renderResponse();
+        }
+    }
+    
+    private boolean userNameIsUnique(String userName) {
+        UserDAO userDAO = new UserDAO();
+        
+        return userDAO.countByUsername(userName) <= 0;
+    }
+    
     public String getUserInfo() {
         String userInfo;
         
@@ -153,6 +204,7 @@ public class UserBean {
         
         userInfo = "<b>Name:</b> " + this.getFirstName() + " " + this.getLastName()
             + "<br><b>E-mail:</b> " + this.getEmail()
+            + "<br><b>Username:</b> " + this.getUsername()
             + "<br><b>Password:</b> " + passStars
             + "<br><b>Security Question:</b> " + this.getSecQuestion()
             + "<br><b>Security Answer:</b> " + this.getSecAnswer();
@@ -160,40 +212,11 @@ public class UserBean {
         return userInfo;
     }
     
-    public void validatePassword(ComponentSystemEvent event) {
-        FacesContext fc = FacesContext.getCurrentInstance();
-
-        UIComponent components = event.getComponent();
-
-        // get password
-        UIInput uiInputPassword = (UIInput) components.findComponent("password");
-        String password = uiInputPassword.getLocalValue() == null ? ""
-            : uiInputPassword.getLocalValue().toString();
-        String passwordId = uiInputPassword.getClientId();
-
-        // get confirm password
-        UIInput uiInputConfirmPassword = (UIInput) components.findComponent("confirmPassword");
-        String confirmPassword = uiInputConfirmPassword.getLocalValue() == null ? ""
-            : uiInputConfirmPassword.getLocalValue().toString();
-
-        // Let required="true" do its job.
-        if (password.isEmpty() || confirmPassword.isEmpty()) {
-            return;
-        }
-
-        if (!password.equals(confirmPassword)) {
-            FacesMessage msg = new FacesMessage("Password must match confirm password");
-            msg.setSeverity(FacesMessage.SEVERITY_ERROR);
-            fc.addMessage(passwordId, msg);
-            fc.renderResponse();
-        }
-    }
-    
     public String getUserInfoAsHtml() {
         String userInfoAsHtml;
         
         userInfoAsHtml = "<p>Welcome to our application. Below you can see your"
-            + "information.</p>"
+            + " information.</p>"
             + "<p>" + this.getUserInfo() + "</p>"
             + "<img src=\"cid:image\">";
         
@@ -264,5 +287,19 @@ public class UserBean {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * @return the username
+     */
+    public String getUsername() {
+        return username;
+    }
+
+    /**
+     * @param username the username to set
+     */
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

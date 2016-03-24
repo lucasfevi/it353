@@ -20,6 +20,7 @@
                         </h:panelGroup>
                         <h:panelGroup layout="block" styleClass="panel-body">
                             <h:form id="signUpForm">
+                                <f:event listener="#{usersController.theModel.validateUsername}" type="postValidate" />
                                 <f:event listener="#{usersController.theModel.validatePassword}" type="postValidate" />
                                 <h:panelGroup layout="block" styleClass="row">
                                     <h:panelGroup layout="block" styleClass="col-xs-6 col-sm-6 col-md-6">
@@ -40,6 +41,10 @@
                                 
                                 <h:panelGroup layout="block" styleClass="form-group">
                                     <h:inputText value="#{usersController.theModel.email}" id="email" a:placeholder="E-mail Address" styleClass="form-control input-sm" required="true" requiredMessage="E-mail is required" />
+                                </h:panelGroup>
+                                
+                                <h:panelGroup layout="block" styleClass="form-group">
+                                    <h:inputText value="#{usersController.theModel.username}" id="username" a:placeholder="Username" styleClass="form-control input-sm" required="true" requiredMessage="Username is required" />
                                 </h:panelGroup>
                                 
                                 <h:panelGroup layout="block" styleClass="row">
